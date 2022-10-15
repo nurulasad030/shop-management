@@ -6,7 +6,7 @@ const Invoice = () => {
   return (
     <Fragment>
       <div className="flex justify-center border-4 border-gray-400 mt-5 p-5 bg-green-500">
-        <button className="text-2xl w-1/4" onClick={() => setShowModal(true)}>
+        <button className="text-2xl w-full" onClick={() => setShowModal(true)}>
           Invoice
         </button>
       </div>

@@ -22,7 +22,34 @@ const AddInvoiceModal = ({ isVisible, onClose }) => {
           </button>
           <div className="bg-white p-8 rounded rounded-5 ">
             <h2 className="text-4xl font-bold mt-3 mb-5">Invoice</h2>
+            <h2 className="text-3xl font-bold mt-3 mb-5">Customer Information</h2>
             <div className="flex justify-between">
+            <div>
+                <h5 className="text-xl font-semibold mb-1">Customer Name</h5>
+                <input
+                  type="text"
+                  name=""
+                  id=""
+                  placeholder="name"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                />
+              </div>
+              <div>
+                <h5 className="text-xl font-semibold mb-1">Customer Mobile Number</h5>
+                <input
+                  type="text"
+                  name=""
+                  id=""
+                  placeholder="+8801700000"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                />
+              </div>
+            </div>
+            <h2 className="text-3xl font-bold mt-3 mb-5">Product Information</h2>
+            
+            <div className="flex justify-between">
+           
+              
               <div>
                 <h5 className="text-xl font-semibold mb-1">Product SKU Code</h5>
                 <input
