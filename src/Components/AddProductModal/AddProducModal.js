@@ -1,4 +1,8 @@
 import React from "react";
+import { useState } from "react";
+
+
+const [products,setProducts] = useState;
 
 const AddProducModal = ({ isVisible, onClose }) => {
   if (!isVisible) return null;
@@ -6,6 +10,34 @@ const AddProducModal = ({ isVisible, onClose }) => {
   const handleClose = (e) => {
     if (e.target.id === "wrapped") onClose();
   };
+
+ 
+
+
+  const handleAddProduct = (event) =>{
+
+    event.preventDefault();
+
+   
+
+    fetch('http://localhost:5000/users',{
+        method: 'POST',
+        headers : {
+            'content-type' : 'application/json'
+        },
+        body: JSON.stringify(products)
+    })
+    .then(res => res.json())
+    .then(data =>{
+        console.log(data)
+    })
+    console.log(user);
+
+   
+
+
+
+}
   return (
     <div
       className="fixed inset-0 bg-black bg-opacity-25 backdrop-blur-sm flex justify-center items-center rounded "
@@ -21,12 +53,14 @@ const AddProducModal = ({ isVisible, onClose }) => {
         </button>
         <div className="bg-white p-8 rounded rounded-5 ">
           <h2 className="text-4xl font-bold mt-3 mb-5">Add Product</h2>
-          <div className="flex justify-between">
+        <form action="
+        " onSubmit={handleAddProduct}>
+            <div className="flex justify-between">
             <div>
               <h5 className="text-xl font-semibold mb-1">Prodtuct Name</h5>
               <input
                 type="text"
-                name=""
+                name="Name"
                 id=""
                 placeholder="iphone 14 pro max"
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
@@ -36,7 +70,7 @@ const AddProducModal = ({ isVisible, onClose }) => {
               <h5 className="text-xl font-semibold mb-1">Category</h5>
               <input
                 type="text"
-                name=""
+                name="Category"
                 id=""
                 placeholder="Electronics"
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
@@ -48,7 +82,7 @@ const AddProducModal = ({ isVisible, onClose }) => {
               <h5 className="text-xl font-semibold mb-1">Brand/Company</h5>
               <input
                 type="text"
-                name=""
+                name="Brand/Company"
                 id=""
                 placeholder="Apple"
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
@@ -59,7 +93,7 @@ const AddProducModal = ({ isVisible, onClose }) => {
               <input
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 type="text"
-                name=""
+                name="Price"
                 id=""
                 placeholder="$999"
               />
@@ -70,7 +104,7 @@ const AddProducModal = ({ isVisible, onClose }) => {
             <h5 className="text-xl font-semibold mb-1">Product Details</h5>
             <input
               type="text"
-              name=""
+              name="Details"
               id=""
               placeholder="details"
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full leading-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
@@ -82,6 +116,7 @@ const AddProducModal = ({ isVisible, onClose }) => {
               Add Product
             </button>
           </div>
+        </form>
         </div>
       </div>
     </div>
