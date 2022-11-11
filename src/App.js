@@ -23,7 +23,7 @@ function App() {
         {
           path: '/products',
           loader : async()=>{
-            return fetch('./fakeData/products.json')
+            return fetch('http://localhost:5001/products')
           },
           element: <Products></Products>
         },
